@@ -1,0 +1,84 @@
+{
+  "name": "potato-3d-model-web",
+  "version": "0.0.1",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit",
+    "commit": "git-cz",
+    "release": "standard-version",
+    "mpostinstall": "cp .macHooks/* .git/hooks/",
+    "wpostinstall": "xcopy .hooks .git\\hooks /e /Y",
+    "eslint": "eslint --ext .js,.vue .",
+    "fix": "eslint --ext .js,.vue --fix ."
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.e-tudou.com/tudou-web-project/potato-3d-model-web.git"
+  },
+  "publishConfig": {
+    "registry": "http://nexus.e-tudou.com:83/repository/tudou-npm-release/"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS",
+      "pre-commit": "npm run eslint"
+    }
+  },
+  "dependencies": {
+    "@antv/data-set": "^0.10.2",
+    "@antv/g2": "^3.5.8",
+    "@babel/core": "^7.5.5",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/runtime": "^7.5.5",
+    "ant-design-vue": "^1.4.4",
+    "autoprefixer": "^9.6.1",
+    "core-js": "^2.6.9",
+    "potato-ui": "^2.3.3-alpha.14",
+    "potato-utils": "^2.3.1-alpha.1",
+    "three": "^0.110.0",
+    "three-obj-mtl-loader": "^1.0.3",
+    "three-orbit-controls": "^82.1.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.5.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.9.0",
+    "@vue/cli-plugin-eslint": "^3.9.0",
+    "@vue/cli-plugin-unit-mocha": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.1.2",
+    "commitizen": "^4.0.1",
+    "copy-webpack-plugin": "^5.0.3",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "husky": "^3.0.1",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "sass": "^1.18.0",
+    "sass-loader": "^7.1.0",
+    "standard-version": "^6.0.1",
+    "style-resources-loader": "^1.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "description": "孙斌三维建模研究"
+}
